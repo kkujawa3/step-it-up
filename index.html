@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step It Up</title>
+</head>
+<body>
+    
+    <h1>Step It Up</h1>
+
+    <main class="main">
+
+        <!--Goal Header-->
+        <h2>Goals of the day</h2>
+
+        <!--From input from user-->
+        <form id="goalForm">
+            <label for="stepGoal">Today's step goal</label>
+            <input type="number" id="stepGoal" name="stepGoal"><br><br>
+
+            <label for="waterGoal">How many 8oz of water will you drink</label>
+            <input type="number" id="waterGoal" name="waterGoal"><br><br>
+
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </form>
+
+        <p class="number" id="displayStepGoal"></p>
+        <p class="text" id="stepMessage"></p>
+
+        <p class="number" id="displayWaterGoal"></p>
+        <p class="text" id="waterMessage"></p><br><br><br><br>
+
+        <form id="dailyForm">
+            <label for="stepsDone">Enter your steps completed</label>
+            <input type="number" id="stepsDone" name="stepsDone"><br><br>
+
+            <label for="waterIntake">Amount of 8oz you consumed</label>
+            <input type="number" id="waterIntake" name="waterIntake"><br><br>
+
+            <button type="submit">Submit your daily steps</button>
+            <button type="reset">Reset your totals</button>
+        </form>
+
+
+    </main>
+   
+
+    
+
+</body>
+</html>
