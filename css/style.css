@@ -5,13 +5,21 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: rgb(122, 187, 187);
+    background-color: rgb(79, 216, 205);
 }
 
-h1, h2 {
+h1 {
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     line-height: 1;
-    padding: 20px;
+    padding: 10px;
+    font-size: 40px;
+    margin-left: 25px;
+}
+
+h2 {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    line-height: 1;
+    padding: 10px;
     font-size: 40px;
 }
 
@@ -25,12 +33,36 @@ h1, h2 {
     font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
-#goalForm {
-    font-size: 24px;
+#goalForm, #waterForm {
+    font-size: 28px;
 }
 
 input {
-    border: 1px solid rgb(148, 197, 197);
-    background-color: rgb(202, 190, 185);
+    border: 1px solid rgb(16, 77, 77);
+    background-color: rgb(243, 246, 247);
 }
 
+.outputGoal {
+    font-size: 26px;
+    color:maroon;
+}
+
+.outputOunces {
+    font-size: 26px;
+    color:firebrick;
+}
+
+button {
+    padding: 1rem;
+    font-size: 24px;
+    cursor: pointer;
+    border: 1px solid rgb(7, 83, 64);
+    background-color: white;
+    color:rgb(12, 78, 64);
+    border-radius: 10px;
+    gap: 20px;
+}
+
+#dailyForm {
+    font-size: 24px;
+}

@@ -8,36 +8,45 @@
 </head>
 <body>
     
-    <h1>Step It Up</h1>
+    <h1>Step It Up</h1><br><br>
 
     <main class="main">
 
         <!--Goal Header-->
-        <h2>Goals of the day</h2>
+        <h2>Goals of the day</h2><br><br>
 
-        <!--From input from user-->
+        <!--Form input from user for steps goal-->
         <form id="goalForm">
-            <label for="stepGoal">Today's step goal</label>
-            <input type="number" id="stepGoal" name="stepGoal"><br><br>
-
-            <label for="waterGoal">How many 8oz of water will you drink</label>
-            <input type="number" id="waterGoal" name="waterGoal"><br><br>
+            <label for="stepGoal">Today's step goal: </label>
+            <input type="number" id="numberStepGoal" name="numberStepGoal"><br><br>
 
             <button type="button" onclick="storeInput()">Submit</button>
-            <button type="reset">Reset</button>
+            <button type="reset">Reset</button><br><br>
         </form>
 
-        <p class="number" id="displayStepGoal"></p>
-        <p class="text" id="stepMessage"></p>
+        <!--Displays User's Entered Steps Goal-->
+        <div class="outputGoal" id="output"></div><br><br>
 
-        <p class="number" id="displayWaterGoal"></p>
-        <p class="text" id="waterMessage"></p><br><br><br><br>
 
+        <!--Form input from user for water intake goal-->
+        <form id="waterForm">
+            <label for="waterGoal">How many ounces of water will you drink </label>
+            <input type="number" id="ouncesWaterGoal" name="ouncesWaterGoal"><br><br>
+
+            <button type="button" onclick="storeWater()">Submit ounces</button>
+            <button type="reset-btn">Reset</button><br><br>
+        </form>
+
+        <!--Displays User's Entered Water Goal-->
+        <div class="outputOunces" id="outputWater"></div><br><br><br><br><br>
+
+
+        <!--Form for completed totals-->
         <form id="dailyForm">
-            <label for="stepsDone">Enter your steps completed</label>
+            <label for="stepsDone">Amount of steps completed</label>
             <input type="number" id="stepsDone" name="stepsDone"><br><br>
 
-            <label for="waterIntake">Amount of 8oz you consumed</label>
+            <label for="waterIntake">Amount of ounces you consumed</label>
             <input type="number" id="waterIntake" name="waterIntake"><br><br>
 
             <button type="submit">Submit your daily steps</button>
@@ -47,7 +56,7 @@
 
     </main>
    
-
+    <script src="./js/index.js"></script>
     
 
 </body>
