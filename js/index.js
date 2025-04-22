@@ -1,6 +1,5 @@
 "use strict";
 
-
 let goals = {
     steps: 0,
     water: 0
@@ -26,7 +25,7 @@ function addEntry() {
         return;
     }
 
-    const entryIndex = CustomElementRegistry.finIndex(e => e.date === date);
+    const entryIndex = entries.findIndex(e => e.date === date);
     const newEntry = {date, steps, water};
 
     if(entryIndex !== -1) {
