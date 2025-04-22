@@ -12,52 +12,42 @@
 
     <main class="main">
 
-        <!--Goal Header-->
+        <!--Goals Header-->
         <h2>Goals of the day</h2><br><br>
 
-        <!--Form input from user for steps goal-->
+        <!--Form input from user set goals-->
         <form id="goalForm">
-            <label for="stepGoal">Today's step goal: </label>
-            <input type="number" id="numberStepGoal" name="numberStepGoal"><br><br>
+            <label for="stepGoals">Today's step goal: </label>
+            <input type="number" id="stepsGoal" name="stepsGoal"><br><br>
 
-            <button type="button" onclick="storeInput()">Submit</button>
+            <label for="waterGoal">Water goal in ounces</label>
+            <input type="number" id="waterGoal" name="waterGoal"><br><br>
+
+            <button type="button" onclick="setGoals()">Set Goals</button>
             <button type="reset">Reset</button><br><br>
         </form>
 
-        <!--Displays User's Entered Steps Goal-->
-        <div class="outputGoal" id="output"></div><br><br>
-
-
-        <!--Form input from user for water intake goal-->
-        <form id="waterForm">
-            <label for="waterGoal">How many ounces of water will you drink </label>
-            <input type="number" id="ouncesWaterGoal" name="ouncesWaterGoal"><br><br>
-
-            <button type="button" onclick="storeWater()">Submit ounces</button>
-            <button type="reset-btn">Reset</button><br><br>
-        </form>
-
-        <!--Displays User's Entered Water Goal-->
-        <div class="outputOunces" id="outputWater"></div><br><br><br><br><br>
-
-
         <!--Form for completed totals-->
         <form id="dailyForm">
+            <label for="date">Date of Goal</label>
+            <input type="date" id="entryDate" name="entryDate"><br>
+
             <label for="stepsDone">Amount of steps completed</label>
             <input type="number" id="stepsDone" name="stepsDone"><br><br>
 
             <label for="waterIntake">Amount of ounces you consumed</label>
             <input type="number" id="waterIntake" name="waterIntake"><br><br>
 
-            <button type="submit">Submit your daily steps</button>
+            <button type="button" onclick="addEntry()">Add your Entry</button>
             <button type="reset">Reset your totals</button>
         </form>
 
+        <h2> Calendar</h2>
+        <div class="calendar" id="calendar"></div>
 
     </main>
    
     <script src="./js/index.js"></script>
     
-
 </body>
 </html>

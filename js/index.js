@@ -1,55 +1,44 @@
 "use strict";
 
-// Array for storing steps goal
+
+let goals = {
+    steps: 0,
+    water: 0
+};
+
+// Array for storing set goals
 let userGoalArray = [];
 
-function storeInput() {
-    const stepGoal = document.getElementById('numberStepGoal').value;
-    const numberValue = parseFloat(stepGoal);
+function setGoals() {
+    const stepGoal = parseInt(document.getElementById('stepsGoal').value);
+    const waterGoal = parseInt(document.getElementById('waterGoal').vlalue);
+    alert("Goals set!");
+    updateCalendar();
+}    
 
-    if(!isNaN(numberValue)) {
-        userGoalArray.push(numberValue);
-        displayInputs();
-    } else {
-        console.log("invalid number:");
+function addEntry() {
+    const date = document.getElementById('entryDate').value;
+    const steps = document.getElementById('stepsDone').value;
+    const water = document.getElementById('waterIntake').value;
+
+    if(!date || isNaN(steps) || isNaN(water)) {
+        alert("Please fill in all fields");
+        return;
     }
-}
 
-// Displays user steps goal
-function displayInputs() {
-    const outputGoal = document.getElementById('output');
-    outputGoal.innerHTML = '';
-    userGoalArray.forEach((num, index) => {
-        const p = document.createElement('p');
-        p.textContent = `User Step Goal ${index + 1}: ${num}`;
-        outputGoal.appendChild(p);
-    });
+    const entryIndex = CustomElementRegistry.finIndex(e => e.date === date);
+    const newEntry = {date, steps, water};
 
-}
-
-// Array for storing water intake goal
-let userWaterArray = [];
-
-function storeWater() {
-    const waterGoalAmt = document.getElementById('ouncesWaterGoal').value;
-    const waterValue = parseFloat(waterGoalAmt);
-
-    if(!isNaN(waterValue)) {
-        userWaterArray.push(waterValue);
-        displayWater();
+    if(entryIndex !== -1) {
+        entries[entryIndex] = newEntry;
     } else {
-        console.log("invalid water amount");
+        entries.push(newEntry);
     }
+
+    updateCalendar();
 }
 
-// Displays user water goal
-function displayWater() {
-    const outputOunces = document.getElementById('outputWater');
-    outputOunces.innerHTML = '';
-    userWaterArray.forEach((num, index) => {
-        const w = document.createElement('w');
-        w.textContent = `User Water Goal ${index + 1}: ${num} ounces`;
-        outputOunces.appendChild(w);
-    }); 
+function updateCalendar() {
+    const calendars = document.getElementById('calendar');
+    calendars.innerHTML = '';
 }
-
