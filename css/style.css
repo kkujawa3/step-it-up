@@ -31,25 +31,24 @@ h2 {
     border-radius: 10px;
     max-width: 800px;
     font-family:Georgia, 'Times New Roman', Times, serif;
+    margin: auto;
 }
 
-#goalForm, #waterForm {
+#goalForm, #dailyForm {
     font-size: 28px;
+    margin-bottom: 15px;
 }
 
 input {
     border: 1px solid rgb(16, 77, 77);
     background-color: rgb(243, 246, 247);
+    margin-bottom: 15px;
+    width: 40%;
 }
 
-.outputGoal {
-    font-size: 26px;
-    color:maroon;
-}
-
-.outputOunces {
-    font-size: 26px;
-    color:firebrick;
+label {
+    display: block;
+    margin-bottom: 5px;
 }
 
 button {
@@ -61,8 +60,14 @@ button {
     color:rgb(12, 78, 64);
     border-radius: 10px;
     gap: 20px;
+    width: 40%;
 }
 
-#dailyForm {
-    font-size: 24px;
+.calendar {
+    margin-top: 20px;
 }
+
+.day {
+    margin-bottom: 10px;
+}
+

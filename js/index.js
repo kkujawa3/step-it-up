@@ -1,43 +1,43 @@
 "use strict";
 
-let goals = {
-    steps: 0,
-    water: 0
-};
 
-// Array for storing set goals
-let userGoalArray = [];
+const calendar = [];
+const calendarEl = document.getElementById('calendar');
 
-function setGoals() {
-    const stepGoal = parseInt(document.getElementById('stepsGoal').value);
-    const waterGoal = parseInt(document.getElementById('waterGoal').vlalue);
-    alert("Goals set!");
-    updateCalendar();
-}    
+function addToCalendar() {
+    const stepGoal = document.getElementById('stepsGoal').value;
+    const waterGoal = document.getElementById('watersGoal').value;
+    const completedSteps = document.getElementById('stepsDone').value;
+    const ouncesOfWater = document.getElementById('waterIntake').value;
 
-function addEntry() {
-    const date = document.getElementById('entryDate').value;
-    const steps = document.getElementById('stepsDone').value;
-    const water = document.getElementById('waterIntake').value;
+    const dayEntry = {
+        stepGoal: parseInt(stepGoal),
+        waterGoal: parseInt(waterGoal),
+        completedSteps: parseInt(completedSteps),
+        ouncesOfWater: parseInt(ouncesOfWater),
+        date: new Date().toLocaleDateString()
+    };
 
-    if(!date || isNaN(steps) || isNaN(water)) {
-        alert("Please fill in all fields");
-        return;
-    }
-
-    const entryIndex = entries.findIndex(e => e.date === date);
-    const newEntry = {date, steps, water};
-
-    if(entryIndex !== -1) {
-        entries[entryIndex] = newEntry;
-    } else {
-        entries.push(newEntry);
-    }
-
+    calendar.push(dayEntry);
+    alert("Goals added");
     updateCalendar();
 }
 
 function updateCalendar() {
-    const calendars = document.getElementById('calendar');
-    calendars.innerHTML = '';
+    calendarEl.innerHTML = '';
+    calendar.forEach(day => {
+        const dayEl = document.createElement('div');
+        dayEl.classList.add('day');
+        dayEl.innerHTML = `<strong>Date:</strong> ${day.date}<br><strong>Steps Goal:</strong> ${day.stepGoal} - <strong>Completed Steps:</strong> ${day.completedSteps}<br>
+        <strong>Water Goal:</strong> ${day.waterGoal}oz - <strong>Ounces of Water:</strong> ${day.ouncesOfWater}oz`;
+        calendarEl.appendChild(dayEl);
+    });
 }
+
+document.getElementById('reset-button').addEventListener('click', function(event) {
+    calendarEl.innerHTML = '';
+    stepsGoal.innerHTML = '';
+    watersGoal.innerHTML = '';
+    completedSteps.innerHTML = '';
+    ouncesOfWater.innerHTML = '';
+});

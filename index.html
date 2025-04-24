@@ -17,33 +17,31 @@
 
         <!--Form input from user set goals-->
         <form id="goalForm">
-            <label for="stepGoals">Today's step goal: </label>
+            <label for="stepsGoals">Today's step goal </label>
             <input type="number" id="stepsGoal" name="stepsGoal"><br><br>
 
-            <label for="waterGoal">Water goal in ounces</label>
-            <input type="number" id="waterGoal" name="waterGoal"><br><br>
-
-            <button type="button" onclick="setGoals()">Set Goals</button>
-            <button type="reset">Reset</button><br><br>
+            <label for="watersGoal">Water goal in ounces</label>
+            <input type="number" id="watersGoal" name="watersGoal"><br><br>
         </form>
 
         <!--Form for completed totals-->
         <form id="dailyForm">
             <label for="date">Date of Goal</label>
-            <input type="date" id="entryDate" name="entryDate"><br>
+            <input type="date" id="entryDate" name="entryDate"><br><br>
 
             <label for="stepsDone">Amount of steps completed</label>
             <input type="number" id="stepsDone" name="stepsDone"><br><br>
 
             <label for="waterIntake">Amount of ounces you consumed</label>
             <input type="number" id="waterIntake" name="waterIntake"><br><br>
-
-            <button type="button" onclick="addEntry()">Add your Entry</button>
-            <button type="reset">Reset your totals</button>
         </form>
 
+        <button type="button" onclick="addToCalendar()">Add your calendar entry</button><br>
+
         <h2> Calendar</h2>
-        <div class="calendar" id="calendar"></div>
+        <div class="calendar" id="calendar"></div><br>
+
+        <button type="reset" id="reset-button">Reset Totals</button>
 
     </main>
    
